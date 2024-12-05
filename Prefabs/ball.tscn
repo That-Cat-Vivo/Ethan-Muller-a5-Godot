@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://vnhg525haw6s"]
+
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_dkdbh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5eck0"]
+radius = 15.0
+
+[node name="Ball" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5eck0")
+
+[node name="Ellipse" type="Node2D" parent="."]
+script = ExtResource("1_dkdbh")
+size = Vector2(30, 30)
+circle = true

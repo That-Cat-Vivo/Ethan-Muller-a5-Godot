@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Ethan-Muller-a5-Pinball"
+run/main_scene="res://pinball.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Ethan-Muller-a5-Pinball"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/2d_shapes/plugin.cfg")

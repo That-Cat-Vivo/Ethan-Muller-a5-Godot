@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://byfp4r4lm6i1o"]
+
+[ext_resource type="PackedScene" uid="uid://bfssc8qpy1b1i" path="res://Prefabs/Wall.tscn" id="2_ggfap"]
+[ext_resource type="PackedScene" uid="uid://vnhg525haw6s" path="res://Prefabs/ball.tscn" id="2_ul8nb"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Triangle.gd" id="3_sgs7f"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="4_cf3ii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blk1o"]
+size = Vector2(20, 143.529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215dm"]
+size = Vector2(200, 150)
+
+[node name="Pinball" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Ball" parent="Level" instance=ExtResource("2_ul8nb")]
+position = Vector2(801, 216)
+
+[node name="Top" parent="Level" instance=ExtResource("2_ggfap")]
+position = Vector2(540, 0)
+scale = Vector2(6, 0.1)
+
+[node name="WallL" parent="Level" instance=ExtResource("2_ggfap")]
+position = Vector2(144, 315)
+
+[node name="WallR" parent="Level" instance=ExtResource("2_ggfap")]
+position = Vector2(1008, 315)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+position = Vector2(327.026, 524.239)
+rotation = -0.933751
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_blk1o")
+
+[node name="Triangle" type="Node2D" parent="Level/StaticBody2D"]
+position = Vector2(288, 531)
+script = ExtResource("3_sgs7f")
+size = Vector2(207, 89.282)
+fill_color = Color(0.47451, 0.690196, 1, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+position = Vector2(576, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+position = Vector2(252, 522)
+rotation = 0.933751
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_blk1o")
+
+[node name="Triangle" type="Node2D" parent="Level/StaticBody2D2"]
+position = Vector2(288, 531)
+script = ExtResource("3_sgs7f")
+size = Vector2(207, 89.282)
+fill_color = Color(0.47451, 0.690196, 1, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+position = Vector2(288, 639)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_215dm")
+
+[node name="Rectangle" type="Node2D" parent="Level/StaticBody2D3"]
+script = ExtResource("4_cf3ii")
+size = Vector2(200, 150)
+fill_color = Color(0.47451, 0.690196, 1, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Level"]
+position = Vector2(864, 639)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_215dm")
+
+[node name="Rectangle" type="Node2D" parent="Level/StaticBody2D4"]
+script = ExtResource("4_cf3ii")
+size = Vector2(200, 150)
+fill_color = Color(0.47451, 0.690196, 1, 1)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
+position = Vector2(369, 684)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_215dm")
+
+[node name="Rectangle" type="Node2D" parent="Level/StaticBody2D5"]
+script = ExtResource("4_cf3ii")
+size = Vector2(200, 150)
+fill_color = Color(0.47451, 0.690196, 1, 1)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Level"]
+position = Vector2(792, 684)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_215dm")
+
+[node name="Rectangle" type="Node2D" parent="Level/StaticBody2D6"]
+script = ExtResource("4_cf3ii")
+size = Vector2(200, 150)
+fill_color = Color(0.47451, 0.690196, 1, 1)
