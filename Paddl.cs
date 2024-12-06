@@ -13,11 +13,11 @@ public partial class Paddl : AnimationPlayer
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("paddle_left"))
-		{
-			animPlayer.Play("new_animation");
-		}
-	}
+        if (Input.IsActionJustPressed("paddle_left"))
+        {
+            animPlayer.Play("paddle");
+        }
+    }
 
   
 }

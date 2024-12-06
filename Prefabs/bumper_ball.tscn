@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_j2b1y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d2cf4"]
-bounce = 3.0
+friction = 0.0
+bounce = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2aqhd"]
 radius = 30.0
