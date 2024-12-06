@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://gmbenmrkihho"]
+
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="1_j2b1y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d2cf4"]
+bounce = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2aqhd"]
+radius = 30.0
+
+[node name="Bumper Ball" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_d2cf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2aqhd")
+
+[node name="Ellipse" type="Node2D" parent="."]
+script = ExtResource("1_j2b1y")
+size = Vector2(60, 60)
+circle = true
+fill_color = Color(0.945561, 0.0736184, 0.045843, 1)
