@@ -56,10 +56,10 @@ _data = {
 [node name="Level" type="Node2D" parent="."]
 
 [node name="Ball" parent="Level" instance=ExtResource("2_ul8nb")]
-position = Vector2(576, 90)
+position = Vector2(405, 54)
 
 [node name="Top" parent="Level" instance=ExtResource("2_ggfap")]
-position = Vector2(540, 0)
+position = Vector2(540, -45)
 scale = Vector2(6, 0.1)
 
 [node name="WallL" parent="Level" instance=ExtResource("2_ggfap")]
