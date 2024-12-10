@@ -1,5 +1,47 @@
-[gd_scene format=3 uid="uid://de4bikobpurp4"]
+[gd_scene load_steps=5 format=3 uid="uid://de4bikobpurp4"]
+
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="1_g0fxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2h7i"]
+size = Vector2(20, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixsw0"]
+size = Vector2(20, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pllp"]
+size = Vector2(20, 100)
 
 [node name="Ramp" type="StaticBody2D"]
+position = Vector2(18, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k2h7i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(36, 63)
+rotation = 2.41205
+shape = SubResource("RectangleShape2D_ixsw0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(108, 108)
+rotation = -1.309
+shape = SubResource("RectangleShape2D_3pllp")
+
+[node name="Rectangle" type="Node2D" parent="."]
+script = ExtResource("1_g0fxc")
+size = Vector2(20, 60)
+corner_radius = 0.0
+
+[node name="Rectangle2" type="Node2D" parent="."]
+position = Vector2(36, 63)
+rotation = 2.41205
+script = ExtResource("1_g0fxc")
+size = Vector2(20, 100)
+corner_radius = 0.0
+
+[node name="Rectangle3" type="Node2D" parent="."]
+position = Vector2(108, 108)
+rotation = -1.309
+script = ExtResource("1_g0fxc")
+size = Vector2(20, 100)
+corner_radius = 0.0

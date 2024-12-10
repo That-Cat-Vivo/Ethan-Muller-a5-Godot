@@ -37,6 +37,13 @@ _data = {
 [node name="Ball" parent="Level" instance=ExtResource("2_ul8nb")]
 position = Vector2(315, 81)
 
+[node name="Rectangle" type="Node2D" parent="Level"]
+position = Vector2(837, 27)
+script = ExtResource("4_cf3ii")
+size = Vector2(50, 30)
+corner_radius = 0.0
+fill_color = Color(0.564961, 0.564962, 0.564961, 1)
+
 [node name="Bumper Wedge" parent="Level" instance=ExtResource("2_p78jg")]
 position = Vector2(315, 477)
 rotation = -2.72271
