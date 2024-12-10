@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://pid38kwcsxbt"]
+
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Triangle.gd" id="1_4hxr3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5bh6c"]
+bounce = 38.95
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v4pt"]
+size = Vector2(10, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia2es"]
+size = Vector2(100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0abkq"]
+size = Vector2(10, 90)
+
+[node name="Bumper Wedge" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_5bh6c")
+
+[node name="Triangle" type="Node2D" parent="."]
+script = ExtResource("1_4hxr3")
+type = 5
+fill_color = Color(0.945098, 0.0745098, 0.0470588, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.9358, 4.91757)
+rotation = -0.863938
+shape = SubResource("RectangleShape2D_0v4pt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_ia2es")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(45, 0)
+shape = SubResource("RectangleShape2D_0abkq")
