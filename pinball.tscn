@@ -180,3 +180,10 @@ animPlayer = NodePath(".")
 position = Vector2(882, 549)
 
 [node name="Ramp" parent="Level" instance=ExtResource("13_hnodw")]
+position = Vector2(693, 45)
+rotation = -2.87979
+scale = Vector2(-0.5, 0.5)
+
+[node name="Ramp2" parent="Level" instance=ExtResource("13_hnodw")]
+position = Vector2(432, 315)
+scale = Vector2(0.5, 0.5)

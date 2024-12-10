@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Triangle.gd" id="1_4hxr3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5bh6c"]
-bounce = 38.95
+bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v4pt"]
 size = Vector2(10, 130)

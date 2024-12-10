@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Triangle.gd" id="2_7mp3u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eotsl"]
-size = Vector2(271.783, 26.0096)
+size = Vector2(279.045, 26.0096)
 
 [node name="Paddle" type="AnimatableBody2D"]
 script = ExtResource("1_wrwkv")
@@ -16,6 +16,6 @@ size = Vector2(137, 40)
 type = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-119.013, 25.74)
+position = Vector2(-122.587, 26.383)
 rotation = -0.178024
 shape = SubResource("RectangleShape2D_eotsl")
