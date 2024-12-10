@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://pid38kwcsxbt"]
+[gd_scene load_steps=9 format=3 uid="uid://pid38kwcsxbt"]
 
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Triangle.gd" id="1_4hxr3"]
 
@@ -6,13 +6,19 @@
 bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v4pt"]
-size = Vector2(10, 130)
+size = Vector2(110, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ia2es"]
-size = Vector2(100, 10)
+size = Vector2(80, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0abkq"]
-size = Vector2(10, 90)
+size = Vector2(10, 70)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qplds"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jj37n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wbcw"]
 
 [node name="Bumper Wedge" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_5bh6c")
@@ -23,8 +29,8 @@ type = 5
 fill_color = Color(0.945098, 0.0745098, 0.0470588, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.9358, 4.91757)
-rotation = -0.863938
+position = Vector2(-2, 4)
+rotation = 3.85718
 shape = SubResource("RectangleShape2D_0v4pt")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
@@ -34,3 +40,15 @@ shape = SubResource("RectangleShape2D_ia2es")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(45, 0)
 shape = SubResource("RectangleShape2D_0abkq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-40, -35)
+shape = SubResource("CircleShape2D_qplds")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(40, 35)
+shape = SubResource("CircleShape2D_jj37n")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(40, -35)
+shape = SubResource("CircleShape2D_1wbcw")
