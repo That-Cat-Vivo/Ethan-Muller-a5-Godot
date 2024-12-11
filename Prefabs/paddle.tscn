@@ -21,5 +21,4 @@ type = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(123.371, 26.526)
 rotation = 0.178381
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_eotsl")
