@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://byfp4r4lm6i1o"]
+[gd_scene load_steps=21 format=3 uid="uid://byfp4r4lm6i1o"]
 
+[ext_resource type="Script" path="res://Level.cs" id="1_eny08"]
 [ext_resource type="PackedScene" uid="uid://bfssc8qpy1b1i" path="res://Prefabs/Wall.tscn" id="2_ggfap"]
 [ext_resource type="PackedScene" uid="uid://pid38kwcsxbt" path="res://Prefabs/bumper_wedge.tscn" id="2_p78jg"]
 [ext_resource type="PackedScene" uid="uid://vnhg525haw6s" path="res://Prefabs/ball.tscn" id="2_ul8nb"]
@@ -13,6 +14,8 @@
 [ext_resource type="Script" path="res://PaddlR.cs" id="10_ay4ji"]
 [ext_resource type="PackedScene" uid="uid://ctt8dogrxaqq4" path="res://Prefabs/paddleR.tscn" id="11_w82u2"]
 [ext_resource type="PackedScene" uid="uid://de4bikobpurp4" path="res://Prefabs/ramp.tscn" id="13_hnodw"]
+[ext_resource type="PackedScene" uid="uid://lk804diac155" path="res://Prefabs/LossArea.tscn" id="15_6qr2c"]
+[ext_resource type="Script" path="res://Scripts/LossArea.cs" id="16_1iypu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blk1o"]
 size = Vector2(20, 143.529)
@@ -32,10 +35,13 @@ _data = {
 
 [node name="Pinball" type="Node2D"]
 
-[node name="Level" type="Node2D" parent="."]
-
-[node name="Ball" parent="Level" instance=ExtResource("2_ul8nb")]
-position = Vector2(756, 324)
+[node name="Level" type="Node2D" parent="." node_paths=PackedStringArray("LossBox", "BallCollection", "Marker")]
+script = ExtResource("1_eny08")
+BallScene = ExtResource("2_ul8nb")
+LossBox = NodePath("Area2D")
+BallCollection = NodePath("BallCollection")
+Marker = NodePath("Marker2D")
+Fire = Vector2(-2000, 0)
 
 [node name="Rectangle" type="Node2D" parent="Level"]
 position = Vector2(837, 27)
@@ -188,3 +194,13 @@ scale = Vector2(-0.5, 0.5)
 position = Vector2(747, 216)
 rotation = -1.8326
 scale = Vector2(0.5, 0.5)
+
+[node name="Area2D" parent="Level" instance=ExtResource("15_6qr2c")]
+position = Vector2(580, 650)
+disable_mode = 0
+script = ExtResource("16_1iypu")
+
+[node name="BallCollection" type="Node2D" parent="Level"]
+
+[node name="Marker2D" type="Marker2D" parent="Level"]
+position = Vector2(837, 27)
