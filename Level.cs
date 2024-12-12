@@ -23,6 +23,9 @@ public partial class Level : Node2D
 	[Export]
 	Label BallCounter;
 
+	[Export]
+	Label GameOver;
+
 
 
     int BallCount;
@@ -71,5 +74,11 @@ public partial class Level : Node2D
     public override void _Process(double delta)
 	{
         BallCounter.Text = BallCount.ToString();
+       
+		if (IsBallAvailable == false)
+        {
+            GameOver.Text = "GAME OVER!";
+        }
+
     }
 }
