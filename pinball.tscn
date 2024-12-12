@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://byfp4r4lm6i1o"]
+[gd_scene load_steps=23 format=3 uid="uid://byfp4r4lm6i1o"]
 
 [ext_resource type="Script" path="res://Level.cs" id="1_eny08"]
 [ext_resource type="PackedScene" uid="uid://bfssc8qpy1b1i" path="res://Prefabs/Wall.tscn" id="2_ggfap"]
@@ -33,15 +33,24 @@ _data = {
 "paddleRight": ExtResource("9_rlidi")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_xrjsp"]
+font_size = 30
+font_color = Color(0.143332, 0.0892993, 0.326095, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pl7q4"]
+font_size = 30
+font_color = Color(0.145098, 0.0901961, 0.32549, 1)
+
 [node name="Pinball" type="Node2D"]
 
-[node name="Level" type="Node2D" parent="." node_paths=PackedStringArray("LossBox", "BallCollection", "Marker")]
+[node name="Level" type="Node2D" parent="." node_paths=PackedStringArray("LossBox", "BallCollection", "Marker", "BallCounter")]
 script = ExtResource("1_eny08")
 BallScene = ExtResource("2_ul8nb")
 LossBox = NodePath("Area2D")
 BallCollection = NodePath("BallCollection")
 Marker = NodePath("Marker2D")
 Fire = Vector2(-2000, 0)
+BallCounter = NodePath("BallCounter")
 
 [node name="BallCollection" type="Node2D" parent="Level"]
 
@@ -203,3 +212,19 @@ script = ExtResource("16_1iypu")
 
 [node name="Marker2D" type="Marker2D" parent="Level"]
 position = Vector2(837, 27)
+
+[node name="BallCounter" type="Label" parent="Level"]
+offset_left = 1008.0
+offset_top = 18.0
+offset_right = 1048.0
+offset_bottom = 60.0
+label_settings = SubResource("LabelSettings_xrjsp")
+horizontal_alignment = 1
+
+[node name="BallLabel" type="Label" parent="Level"]
+offset_left = 909.0
+offset_top = 18.0
+offset_right = 978.0
+offset_bottom = 60.0
+text = "Balls:"
+label_settings = SubResource("LabelSettings_pl7q4")

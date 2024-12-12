@@ -4,6 +4,7 @@ using System;
 public partial class Level : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
+	
 	[Export]
 	PackedScene BallScene;
 
@@ -19,8 +20,21 @@ public partial class Level : Node2D
 	[Export]
 	Vector2 Fire;
 
-	public override void _Ready()
+	[Export]
+	Label BallCounter;
+
+
+
+    int BallCount;
+
+	bool IsBallAvailable;
+
+
+    public override void _Ready()
 	{
+		BallCount = 3;
+		IsBallAvailable = true;
+
         LossBox.BodyEntered += LossBox_BodyEntered;
 		RigidBody2D NewBall = BallScene.Instantiate<RigidBody2D>();
             NewBall.Position = Marker.Position;
@@ -30,17 +44,31 @@ public partial class Level : Node2D
 
     private void LossBox_BodyEntered(Node2D body)
     {
-        RigidBody2D NewBall = BallScene.Instantiate<RigidBody2D>();
-        NewBall.Position = Marker.Position;
-        BallCollection.AddChild(NewBall);
-        NewBall.ApplyCentralImpulse(Fire);
+		if(IsBallAvailable)
+		{
+            RigidBody2D NewBall = BallScene.Instantiate<RigidBody2D>();
+            NewBall.Position = Marker.Position;
+            BallCollection.AddChild(NewBall);
+            NewBall.ApplyCentralImpulse(Fire);
+        }
 
         body.QueueFree();
+
+		if(BallCount >= 1)
+		{
+			BallCount--;
+		}
+
+		if(BallCount == 0)
+		{
+			IsBallAvailable = false;
+		}
     }
+	
+	
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
 	{
-		
 	}
 }
